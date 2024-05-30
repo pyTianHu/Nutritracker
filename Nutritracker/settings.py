@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-7v3!l#oj@zh50tj85+tom!c)ilu4!@^tkwcmi6be&c4)+&o990
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*", "nutritracker.onrender.com"]
 
 
 # Application definition
