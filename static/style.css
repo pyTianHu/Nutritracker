@@ -1,0 +1,91 @@
+.sidenav {
+    background-color: rgb(247, 240, 240);
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 200px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+
+.titlesection{
+    margin-top: 0;
+    
+}
+
+.apptitle {
+    padding-left: 6%;
+    font-size: 25px;
+    text-decoration: none;
+    color:#3066be;
+}
+
+
+.menuitems {
+    padding-left: 0px;
+}
+
+.sidenav_menuitem_button {
+    color: black;
+    font-size: 20px;
+    text-decoration: none;
+    display: inline-block;
+    padding: 1% 1.5%;
+    border-radius: 10px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.sidenav_menuitem_button:hover {
+    color: white;
+    background-color: #3066be;
+    border-radius: 5px;
+    padding: 2% 5%;
+}
+
+.settingssection{
+    margin-top: auto;
+    padding-bottom: 20px;
+}
+
+.top_row {
+    padding: 0.1% 0;
+    background-color: rgb(247, 240, 240);
+    color: black;
+    padding-left: 250px;
+}
+
+.searchbar {
+    width:100%;
+    margin-left: auto;
+}
+
+.top_row_content_wrapper {
+    display: flex;
+    align-items: center;
+
+}
+
+.top_row_content_wrapper > * {
+    margin-right: 30%;
+}
+
+.top_row_center_content {
+    text-align: center;
+}
+
+.top_row_right_content {
+    text-align: right;
+    margin-right: 0;
+}
+
+.userimg {
+    width: 50px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
+body {
+    margin: 0;
+}
