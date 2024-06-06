@@ -40,6 +40,8 @@ def add_meal(request):
 def add_weight(request):
     return HttpResponse("work in progress")
 
+def set_goals(request):
+    return HttpResponse("work in progress")
 
 def add_measures(request):
     return HttpResponse("work in progress")
