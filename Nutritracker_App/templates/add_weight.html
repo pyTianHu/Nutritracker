@@ -1,0 +1,17 @@
+{% load static %}
+{% include 'navbar.html' %}
+<body>
+    <main class="pagecontent">
+        <h1>Add Weight Form</h1>
+        <section class = "formsection">
+            <form id="bodyweightform" method="POST" action="{% url 'add_weight' %}">
+                {% csrf_token %}
+                <label for="date">Date</label>
+                {{form.date}}
+                <label for="bodyweight">BodyWeight</label>
+                {{form.bodyWeight}}
+                <button type="submit" id="addbodyweightbutton">Submit</button>
+            </form>
+        </section>
+    </main>
+</body>

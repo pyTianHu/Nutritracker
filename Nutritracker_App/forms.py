@@ -1,5 +1,19 @@
 from django import forms
 from django.forms import formset_factory
+from .models import (
+    BodyWeight, 
+    Goals
+    )
+
+class AddWeightForm(forms.ModelForm):
+    class Meta:
+        model = BodyWeight
+        fields = ['date', 'bodyWeight']
+
+class SetGoalsForm(forms.ModelForm):
+    class Meta:
+        model = Goals
+        fields = ['bodyWeight_goal', 'bodyWeight_goal_deadline']
 
 class AddWorkoutForm(forms.Form):
     # Define fields for adding a workout (e.g., date, duration, exercise, etc.)

@@ -2,9 +2,52 @@
 {% include 'navbar.html' %}
 
 <body>
-                                <!--
-                            <h5 class="navbar_button">Add workout</h5>
-                            <a href="{% url 'add_workout' %}" class="navbar_button"">Add workout</a>
-                                -->                
+    <main class="pagecontent">
+        <h1>Dashboard</h1>
+        <section class="dashboardsection">   
+            <section class = "top_part">
+                <section class="bodyweightsection">
+                    <h2>Last week's bodyweight change</h2>
+                    <!-- last week's bodyweights -->
+                    <!-- this section is to be on the top left side of the screen-->
+                    <table id="bodyweighttable">
+                        <tr>
+                            <th>Date</th>
+                            <th>Bodyweight</th>
+                        </tr>
+                        {% for weight in weights %}
+                        <tr>
+                                <td>{{ weight.date }}</td>
+                                <td>{{ weight.bodyWeight }} </td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </section>
+                
+                <section class="goalssection">
+                    <h2>Goals</h2>
+                    <!-- list of goals vs. progress -->
+                    <!-- this section is to be on the top right side of the screen-->
+                    <section class = "bodyweight_vs_goal">
+                        <!-- goals vs. current bodyweight -->
+                        <label for="current_bodyweight" class="current_bodyweight_label">Current Bodyweight</label>
+                        {{bodyweight_vs_goal.current_bodyweight}} 
+                        <label for="goal_bodyweight" class="goal_bodyweight">Goal Bodyweight</label>
+                        {{bodyweight_vs_goal.bodyweight_goal}}
+                    </section>
+                </section>
+            </section>
+            <section class="bottom_part">
+                <section class="foodsection">
+                    <h2>Food</h2>
+                    <!-- Meals for the day & last 2 weeks' kcals consumed -->
+                    <!-- this section is to be on the top right side of the screen-->
+                    <section class = "daily_meal_plan">
+                        <!-- planned meals of the day in table format -->
+                        
+                    </section>
+                </section>
+            </section>
+        </section>
+    </main>
 </body>
-</html>

@@ -1,0 +1,27 @@
+{% load static %}
+{% include 'navbar.html' %}
+<body>
+    <main class="pagecontent">
+        <h1>Set Goals</h1>
+        <section class= "formsection setgoalssection">
+            <form id="setgoalsform" method="POST" action="{% url 'set_goals' %}">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="bodyweight_goal" class="goalslabel">BodyWeight Goal</label>
+                    {{ form.bodyWeight_goal }}
+                </div>
+                <div class="form-group">
+                    <label for="bodyweight_goal_deadline" class="goalslabel">Deadline to reach bodyweight goal</label>
+                    {{ form.bodyWeight_goal_deadline }}
+                </div>
+                <div class="form-group">
+                    <button type="submit" id="setgoalsbutton" class="setgoalsbutton">Submit</button>
+                </div>
+            </form>
+        </section>
+        {{message}}
+        <section class= "currentgoalssection">
+        </section>
+        
+    </main>
+</body>

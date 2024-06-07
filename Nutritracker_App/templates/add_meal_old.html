@@ -1,0 +1,61 @@
+{% include 'navbar.html' %}
+
+    <body>
+        <main role="main" class="col-md-10 ml-sm-auto main-content">
+            <div class="jumbotron mt-3">
+                <h1>Add Meal</h1>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                            <form id="mealForm" method="post">
+                                {% csrf_token %}
+                                <label for="id_date">Date:</label>
+                                {{ form.date }}
+                                <div id="mealContainer">
+                                    <!-- Exercise and weight fields will be added here -->
+                                </div>
+                                <button type="button" id="addMealBtn">Add Meal</button>
+                                <button type="submit">Submit</button>
+                            </form>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+</body>
+
+
+</html>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mealContainer = document.getElementById('mealContainer');
+            const addMealBtn = document.getElementById('addMealBtn');
+            let mealCount = 0;
+
+            addMealBtn.addEventListener('click', function() {
+                mealCount++;
+                const mealDiv = document.createElement('div');
+                mealDiv.innerHTML = `
+                    <div>
+                        <label for="id_meal_${mealCount}">Meal ${mealCount}:</label>
+                        <input type="text" id="id_meal_${mealCount}" name="meal_${mealCount}">
+                        <label for="id_amount_${mealCount}">amount ${mealCount}:</label>
+                        <input type="text" id="id_amount_${mealCount}" name="amount_${mealCount}">
+                        <button type="button" class="removeMealBtn">Remove</button>
+                    </div>
+                `;
+                mealContainer.appendChild(mealDiv);
+
+                const removeMealBtns = document.querySelectorAll('.removeMealBtn');
+                removeMealBtns.forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        btn.parentElement.remove();
+                        mealCount--;
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
