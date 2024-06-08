@@ -89,3 +89,93 @@
 body {
     margin: 0;
 }
+
+.pagecontent {
+    padding-left: 300px;
+}
+
+.setgoalssection {
+    width: 45%;
+}
+
+.setgoalsform {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; 
+    margin: auto;
+    /* Adds space between each child element */
+    /*form should appear on the left and only take half of the space
+        form inputs should appear below each other
+        button should appear below the form
+    */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.goalslabel {
+    margin-top: 30px;
+}
+
+.setgoalsbutton {
+    align-self:flex-start;
+    margin-top:20px;
+}
+
+.top_part{
+    display:flex;
+    justify-content: space-between;
+    align-items: stretch;
+
+}
+
+.bodyweightsection, .goalssection{
+    flex: 1; /* Ensure both sections take up equal width */
+    padding: 20px; /* Add some padding */
+    width: 100%;
+}
+
+.bodyweightsection{
+    border-right: 1px solid #fafafa;
+}
+
+.goalssection{
+    border-left: 1px solid #fafafa
+}
+
+.bottom_part{
+
+}
+
+#setgoalsform input[type="number"],
+#setgoalsform input[type="text"],
+#setgoalsform select,
+#setgoalsform textarea {
+    width: 25%; /* Ensure input fields take up the full width of their container */
+}
+
+#bodyweighttable {
+    border: 1px solid; 
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center
+}
+
+#bodyweighttable td, #bodyweighttable th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#bodyweighttable th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #3066be;
+    color: white;
+}
+
+#bodyweighttable tr:nth-child(even){background-color: #f2f2f2;}
+#bodyweighttable tr:hover {background-color: #ddd;}
