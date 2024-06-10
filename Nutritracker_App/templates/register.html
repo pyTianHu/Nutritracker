@@ -1,0 +1,14 @@
+{% load static %}
+{% include 'navbar.html' %}
+<body>
+    <main class="pagecontent">
+        <h1>Register</h1>
+        <section class = "formsection">
+            <form id="registerform" method="POST" action="{% url 'register' %}">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit">Register</button>
+                </form>
+        </section>
+    </main>
+</body>
