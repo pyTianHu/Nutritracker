@@ -65,6 +65,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'Nutritracker_App.custom_context_processor.get_username'
             ],
         },
     },
@@ -126,6 +127,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'  # This is the directory where static files will be collected
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')] 
+
+LOGIN_URL = 'login/'
+LOGIN_REDIRECT_URL = "/"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field

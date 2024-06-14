@@ -45,6 +45,71 @@
     padding: 2% 5%;
 }
 
+.toggle-btn {
+    border: none;
+    background-color: transparent;
+    padding: 10px;
+    cursor: pointer;
+    align-self: flex-start;
+}
+
+.toggle-img {
+    width:15%;
+    height: auto;
+}
+
+
+/* Styles for collapsed sidebar */
+.sidenav.collapsed {
+    width: 60px;
+}
+
+.sidenav.collapsed .sidenav_menuitem_button {
+    font-size: 0; /* Hide the text */
+    padding: 10px; /* Adjust padding */
+    background: no-repeat center/20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidenav.collapsed .sidenav_menuitem_button::before {
+    font-size: 20px;
+    margin-right: 0;
+}
+
+.sidenav .toggle-btn .toggle-img {
+    width: 20px; /* Consistent size */
+    height: auto;
+}
+
+
+/* Media query to collapse sidebar by default on smaller screens */
+@media (max-width: 768px) {
+    .sidenav {
+        width: 60px;
+    }
+    .sidenav .apptitle {
+        display: none;
+    }
+    .sidenav .sidenav_menuitem_button {
+        font-size: 0;
+        background: no-repeat center;
+    }
+    .sidenav .sidenav_menuitem_button::before {
+        font-size: 20px;
+        margin-right: 0;
+    }
+    .top_row {
+        padding-left: 60px;
+    }
+    .pagecontent {
+        padding-left: 60px;
+    }
+}
+
+
+
 .settingssection{
     margin-top: auto;
     padding-bottom: 20px;
@@ -78,6 +143,7 @@
 
 .top_row_right_content {
     text-align: right;
+    padding-right: 0;
     margin-right: 0;
 }
 

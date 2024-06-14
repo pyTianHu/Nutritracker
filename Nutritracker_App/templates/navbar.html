@@ -6,47 +6,53 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Nutritracker</title>
         <link rel="stylesheet" href="{% static 'style.css' %}"  type="text/css">
+        <script defer src="{% static 'scripts.js' %}"></script>
     </head>
     <body>
         <main>
-            <section class="sidenav">
+            <section class="sidenav" id="sidebar">
                 <div class="titlesection">
                     <h1 class="apptitle"><a href="{% url 'home' %}" class="apptitle">NutriTracker</a></h1>
+                    <button class="toggle-btn" id="toggle-btn"><img src="{% static 'pictures/back-button.png' %} " class="toggle-img" title="Collapse Menu"></button>
                     <hr>
                 </div>
                 <div class="menusection">
                     <ul class="menuitems">
-                        <a href="{% url 'home' %}" class="sidenav_menuitem_button">Dashboard</a>
+                        <a href="{% url 'home' %}" class="sidenav_menuitem_button" data-icon="{% static 'pictures/dashboard.png' %}">Dashboard</a>
                     </ul>
                     <ul class="menuitems">
-                        <a href="{% url 'add_meal' %}" class="sidenav_menuitem_button">Add Meal</a>
+                        <a href="{% url 'add_meal' %}" class="sidenav_menuitem_button" data-icon="{% static 'pictures/food.png' %}">Add Meal</a>
                     </ul>
                     <ul class="menuitems">
-                        <a href="{% url 'add_workout' %}" class="sidenav_menuitem_button">Add Workout</a>
+                        <a href="{% url 'add_workout' %}" class="sidenav_menuitem_button" data-icon="{% static 'pictures/workout.png' %}">Add Workout</a>
                     </ul>
                     <ul class="menuitems">
-                        <a href="{% url 'add_weight' %}" class="sidenav_menuitem_button">Add Body Weight</a>
+                        <a href="{% url 'add_weight' %}" class="sidenav_menuitem_button" data-icon="{% static 'pictures/weight.png' %}">Add Body Weight</a>
                     </ul>
                     <ul class="menuitems">
-                        <a href="{% url 'add_measures' %}" class="sidenav_menuitem_button">Add Body Measures</a>
+                        <a href="{% url 'add_measures' %}" class="sidenav_menuitem_button" data-icon="{% static 'pictures/measures.png' %}">Add Body Measures</a>
                     </ul>
                     <ul class="menuitems">
-                        <a href="{% url 'set_goals' %}" class="sidenav_menuitem_button">Set Goals</a>
+                        <a href="{% url 'set_goals' %}" class="sidenav_menuitem_button" data-icon="{% static 'pictures/goal.png' %}">Set Goals</a>
                     </ul>
                 </div>
                 <div class="settingssection">
                     <ul class="menuitems">
-                        <a href="" class="sidenav_menuitem_button">HELP</a>
+                        <a href="" class="sidenav_menuitem_button" data-icon="{% static 'pictures/help.png' %}">HELP</a>
                     </ul>
                     <hr>
                     <ul class="menuitems">
-                        <a href="" class="sidenav_menuitem_button">LOGOUT</a>
+                        <a href="{% url 'log_out' %}" class="sidenav_menuitem_button" data-icon="{% static 'pictures/logout.png' %}">LOGOUT</a>
                     </ul>
                 </div>
             </section>
             <section class="top_row">
                 <div class="top_row_content_wrapper">
-                    <h4>Welcome back, <br> Krisztian!</h4>
+                    {% if username %}
+                        <h4>{{message}}, {{ username }}!</h4>
+                    {% else %}
+                        <h4>{{message}}!</h4>
+                    {% endif %}
                     <div class="top_row_center_content">
                         <input type="text" class="searchbar top_row_center_content" placeholder="Search">
                     </div>

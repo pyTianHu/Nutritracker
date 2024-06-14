@@ -1,0 +1,20 @@
+{% load static %}
+{% include 'navbar.html' %}
+<body>
+    <main class="pagecontent">
+        
+            <section class="pagecontent">
+                <h1>Login</h1>
+                <section class = "formsection">
+                    <form id="loginform" method="POST" action="{% url 'login' %}">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <button type="submit">Login</button>
+                        </form>
+                </section>
+            </section>
+            <section class ="registerbutton">
+                <a href="{% url 'register' %}">I dont have an account, but i want to <button>Register</button></a>
+            </section>
+    </main>
+</body>
